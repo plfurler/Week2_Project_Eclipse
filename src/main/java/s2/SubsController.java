@@ -2,6 +2,7 @@ package s2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,17 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
 /**
- * Servlet implementation class ModifyCourseServlet
+ * Servlet implementation class SubsController
  */
-@WebServlet("/ModifyCourse")
-public class ModifyCourseServlet extends HttpServlet {
+@WebServlet("/SubsController")
+public class SubsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ModifyCourseServlet() {
+	public SubsController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,7 +33,8 @@ public class ModifyCourseServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().println("TODO: implement doGet()");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -39,29 +43,34 @@ public class ModifyCourseServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String studentId = request.getParameter("txtId");
-		String studentName = request.getParameter("txtName");
-		String stream = request.getParameter("txtStream");
-		String semester = request.getParameter("txtSemester");
-		String oldCourse = request.getParameter("txtOldCourse");
-		String newCourse = request.getParameter("txtNewCourse");
+		String name = request.getParameter("txtName");
+		String address = request.getParameter("txtAddress");
+		String telNumber = request.getParameter("txtTel");
+		String magazinesString = "";
+		String[] magazines = request.getParameterValues("chkMags");
+
+		for (int i = 0; i < magazines.length; i++) {
+			if (i == magazines.length - 1) {
+				magazinesString += magazines[i] + ".";
+				break;
+			}
+			magazinesString += magazines[i] + ", ";
+		}
 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Week2_Project_Eclipse - Modify Course Information</title>");
+		out.println("<title>Week2_Project_Eclipse - Multiple</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>Your details are as follows:</h1>");
-		out.println("<h3>Your Student Id: " + studentId + "</h3>");
-		out.println("<h3>Your Student Name: " + studentName + "</h3>");
-		out.println("<h3>Your Stream: " + stream + "</h3>");
-		out.println("<h3>Your Semester: " + semester + "</h3>");
-		out.println("<h3>Your Old Course: " + oldCourse + "</h3>");
-		out.println("<h3>Your New Course: " + newCourse + "</h3>");
-		out.println("<p>Return to <a href=\"modify.html\">Modify Course Offerings</a>");
+		out.println("<h3>Your Name: " + name + "</h3>");
+		out.println("<h3>Your Address: " + address + "</h3>");
+		out.println("<h3>Your Telephon Number: " + telNumber + "</h3>");
+		out.println("<h3>Your Magazine Subscriptions: " + magazinesString + "</h3>");
+		out.println("<p>Return to <a href=\"multiple.html\">Multiple</a>");
 		out.println("</body>");
 		out.println("</html>");
 

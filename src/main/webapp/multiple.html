@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Week2_Project_Eclipse - Lab03 - Mulitple</title>
+</head>
+<body>
+<h1>Using a servlet to process multiple form controls with the same name</h1>
+	<form name="MultipleForm" action="SubsController" method="post">
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="txtName" size="30"></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="txtAddress" size="30"></td>
+			</tr>
+			<tr>
+				<td>Telephone</td>
+				<td><input type="text" name="txtTel" size="30"></td>
+			</tr>
+			<tr>
+				<td>Time</td>
+				<td><input type="checkbox" name="chkMags" value="Time"></td>
+			</tr>
+			<tr>
+				<td>Newsweek</td>
+				<td><input type="checkbox" name="chkMags" value="NewsWeek"></td>
+			</tr>
+			<tr>
+				<td>Economist</td>
+				<td><input type="checkbox" name="chkMags" value="Economist"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Submit" name="btnSubmit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
