@@ -41,7 +41,7 @@ public class RegistrationControllerServlet extends HttpServlet {
 
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Student Registration Information</title>");
+		out.println("<title>Week2_Project_Eclipse - Student Registration Information</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>Your details are as follows:</h1>");
@@ -50,6 +50,7 @@ public class RegistrationControllerServlet extends HttpServlet {
 		out.println("<h3>Your Address: " + address + "</h3>");
 		out.println("<h3>Your Telephone Number: " + tel + "</h3>");
 		out.println("<h3>Your Email: " + email + "</h3>");
+		out.println("<p>Return to <a href=\"registration.html\">Registration</a>");
 		out.println("</body>");
 		out.println("</html>");
 		
