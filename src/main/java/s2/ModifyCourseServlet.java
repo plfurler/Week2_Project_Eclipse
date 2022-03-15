@@ -62,6 +62,7 @@ public class ModifyCourseServlet extends HttpServlet {
 		out.println("<h3>Your Old Course: " + oldCourse + "</h3>");
 		out.println("<h3>Your New Course: " + newCourse + "</h3>");
 		out.println("<p>Return to <a href=\"modify.html\">Modify Course Offerings</a>");
+		out.println("<p>Return to <a href=\"studentservices.html\">Home</a></p>");
 		out.println("</body>");
 		out.println("</html>");
 

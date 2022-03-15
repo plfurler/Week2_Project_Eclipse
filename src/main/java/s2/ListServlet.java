@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RegistrationControllerServlet
+ * Servlet implementation class ListServlet
  */
-@WebServlet("/RegController")
-public class RegistrationControllerServlet extends HttpServlet {
+@WebServlet("/list")
+public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public RegistrationControllerServlet() {
+	public ListServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,32 +30,25 @@ public class RegistrationControllerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String id = request.getParameter("txtId");
-		String name = request.getParameter("txtName");
-		String address = request.getParameter("txtAddress");
-		String tel = request.getParameter("txtTel");
-		String email = request.getParameter("txtEmail");
-
+		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		String[] list = { "Adelaide", "Noarlunga", "Regency", "Panorama" };
 
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Week2_Project_Eclipse - Student Registration Information</title>");
+		out.println("<title>Week2_Project_Eclipse - List of Tafe Campuses</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h1>Your details are as follows:</h1>");
-		out.println("<h3>Your Id: " + id + "</h3>");
-		out.println("<h3>Your Name: " + name + "</h3>");
-		out.println("<h3>Your Address: " + address + "</h3>");
-		out.println("<h3>Your Telephone Number: " + tel + "</h3>");
-		out.println("<h3>Your Email: " + email + "</h3>");
-		out.println("<p>Return to <a href=\"registration.html\">Registration</a>");
+		out.println("<h1>Tafe Campuses:</h1>");
+		out.println("<ul>");
+		for (int i = 0; i < list.length; i++) {
+			out.println("<li><strong>" + list[i] + "</strong></li>");
+		}
+		out.println("</ul>");
 		out.println("<p>Return to <a href=\"studentservices.html\">Home</a></p>");
 		out.println("</body>");
 		out.println("</html>");
-		
-		out.close();
 	}
 
 	/**

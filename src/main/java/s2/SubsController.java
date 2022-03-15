@@ -71,6 +71,7 @@ public class SubsController extends HttpServlet {
 		out.println("<h3>Your Telephon Number: " + telNumber + "</h3>");
 		out.println("<h3>Your Magazine Subscriptions: " + magazinesString + "</h3>");
 		out.println("<p>Return to <a href=\"multiple.html\">Multiple</a>");
+		out.println("<p>Return to <a href=\"studentservices.html\">Home</a></p>");
 		out.println("</body>");
 		out.println("</html>");
 
