@@ -42,6 +42,9 @@ public class RegistrationControllerServlet extends HttpServlet {
 		// Instantiate and Initialize student
 		Student student = new Student();
 
+		// Lab06: Validate Form Data
+		String errorMsg = "";
+
 		// Store form values in the student object
 		student.setId(id);
 		student.setFullName(name);
