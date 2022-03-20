@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<jsp:useBean id="student" scope="session" class="model.StudentBean" />
+<jsp:setProperty property="address" name="student" value="123 My Street" />
+<jsp:setProperty property="email" name="student"
+	value="jbloggs@email.com" />
+<jsp:setProperty property="fullName" name="student" value="Joe Bloggs" />
+<jsp:setProperty property="id" name="student" value="0123456789" />
+<jsp:setProperty property="telNumber" name="student" value="8123 4567" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Week2_Project_Eclipse - ExtraCurricular -
-	Registration.jsp</title>
+<title>Week2_Project_Eclipse - ExtraCurricular -Registration.jsp</title>
 </head>
 <body>
-<!--
+	<%--
 Use Bean Tag Rules
 - jsp bean uses XML syntax - must include a slash to close the tag.
 - scope controls how long the bean object is available.
@@ -28,44 +34,30 @@ setProperty tag
 - use single quotes around values to avoid the need to use escape sequences.
 - the setProperty tag cannot be used to set null values or an empty string. 
 
-
-	
--->
-	<jsp:useBean id="student" scope="session" class="model.Student" />
-	<h1>Using a servlet to process simple form parameters</h1>
-	<form name="RegForm" action="RegController" method="post">
-		<table>
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
+ --%>
+	<h1>StudentBean Demo</h1>
+	<table>
+		<thead>
 			<tr>
-				<td>Student Id</td>
-				<td><input type="text" name="txtId" value="" size="10"></td>
+				<th>StudentBean Data</th>
 			</tr>
-			<tr>
-				<td>Full Name</td>
-				<td><input type="text" name="txtName" size="30"></td>
-			</tr>
-			<tr>
-				<td>Address</td>
-				<td><input type="text" name="txtAddress" size="30"></td>
-			</tr>
-			<tr>
-				<td>Telephone</td>
-				<td><input type="text" name="txtTel" size="10"></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><input type="text" name="txtEmail" size="20"></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Submit" name="btnSubmit"></td>
-				<td></td>
-			</tr>
-		</table>
+		</thead>
+		<tr>
+			<td>Student Id: <jsp:getProperty property="id" name="student"/></td>
+		</tr>
+		<tr>
+			<td>Full Name:  <jsp:getProperty property="fullName" name="student"/></td>
+		</tr>
+		<tr>
+			<td>Address: <jsp:getProperty property="address" name="student"/></td>
+		</tr>
+		<tr>
+			<td>Telephone: <jsp:getProperty property="telNumber" name="student"/></td>
+		</tr>
+		<tr>
+			<td>Email: <jsp:getProperty property="email" name="student"/></td>
+		</tr>
+	</table>
 	</form>
 	<p>
 		Return to <a href="studentservices.html">Home</a>
