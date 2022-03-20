@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
+public class StudentBean implements Serializable {
 
 	private String id;
 	private String fullName;
@@ -13,7 +13,7 @@ public class Student implements Serializable {
 	/**
 	 * 
 	 */
-	public Student() {
+	public StudentBean() {
 	}
 
 	/**
@@ -23,7 +23,7 @@ public class Student implements Serializable {
 	 * @param telNumber
 	 * @param email
 	 */
-	public Student(String id, String fullName, String address, String telNumber, String email) {
+	public StudentBean(String id, String fullName, String address, String telNumber, String email) {
 		this.id = id;
 		this.fullName = fullName;
 		this.address = address;
